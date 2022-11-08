@@ -2,7 +2,7 @@ import mysql.connector
 from kafka import KafkaConsumer
 
 try:
-    mydb = mysql.connector.connect(host = 'localhost', user = 'root', password = '',database = 'kafkaevendb')
+    mydb = mysql.connector.connect(host = 'localhost', user = 'root', password = '',database = 'kafkadb')
 except mysql.connector.Error as e:
     print("MySql error",e)
 
