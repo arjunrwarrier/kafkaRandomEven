@@ -1,8 +1,7 @@
 from kafka import KafkaProducer
-
 import time 
-
 import random
+
 
 bootstrap_server = ["localhost:9092"]
 
