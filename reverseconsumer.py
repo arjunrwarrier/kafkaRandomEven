@@ -16,10 +16,10 @@ consumer = KafkaConsumer(topic, bootstrap_servers = bootstrap_server)
 
 for i in consumer:
     print(str(i.value.decode()))
-    random_even = int(i.value.decode())
-    if(random_even % 2)==0:
-        sql = "INSERT INTO `evennumbers`( `evenNumbers`) VALUES (%s)"
-        data = (random_even,)
-        mycursor.execute(sql,data)
-        mydb.commit()
-        print("Even number added to db ", random_even)
+    reverse_number = (i.value.decode()[::-1])
+   
+    sql = "INSERT INTO `reversenumbers`( `reverseNumbers`) VALUES (%s)"
+    data = (reverse_number,)
+    mycursor.execute(sql,data)
+    mydb.commit()
+    print("Reverse number added to db ", reverse_number)
